@@ -3,95 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEAK — Women's Performance Supplements</title>
+    <title>SPORTIVE — Women's Performance Supplements</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         :root {
             --black: #0a0a0a;
             --white: #ffffff;
-            --cream: #faf8f5;
-            --blush: #f2e4e1;
-            --rose: #c4898a;
-            --rose-deep: #a0585a;
-            --rose-light: #e8b4b0;
-            --plum: #5c2434;
+            --off-white: #f5f3f0;
+            --red: #e42320;
+            --red-dark: #c01e1b;
             --warm-gray: #8a8178;
             --light-gray: #e8e4e0;
-            --text: #2a2320;
-            --text-light: #6b6560;
+            --mid-gray: #b5b0aa;
+            --text: #1a1a1a;
+            --text-light: #5a5550;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--cream);
+            background: var(--white);
             color: var(--text);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 
         /* ===================== NAV ===================== */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 40px;
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: rgba(250, 248, 245, 0.92);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0,0,0,0.06);
         }
 
         .nav-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: var(--plum);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            color: var(--black);
             text-decoration: none;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 32px;
+            gap: 28px;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-light);
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--plum); }
+        .nav-links a:hover { color: var(--red); }
 
         .nav-cta {
-            background: var(--plum) !important;
+            background: var(--red) !important;
             color: var(--white) !important;
             padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600 !important;
+            border-radius: 0;
             transition: all 0.3s !important;
         }
 
         .nav-cta:hover {
-            background: var(--rose-deep) !important;
-            transform: translateY(-1px);
+            background: var(--red-dark) !important;
         }
 
         /* ===================== HERO ===================== */
@@ -99,75 +92,78 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 24px 80px;
-            background: linear-gradient(165deg, var(--cream) 0%, var(--blush) 50%, var(--rose-light) 100%);
+            padding: 100px 0 0;
+            background: var(--black);
+            color: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 60%;
-            height: 140%;
-            background: radial-gradient(ellipse, rgba(196, 137, 138, 0.2) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            gap: 0;
+            align-items: stretch;
             width: 100%;
-            max-width: 1140px;
+            max-width: 1400px;
             margin: 0 auto;
+            min-height: 90vh;
         }
 
-        .hero-content { position: relative; z-index: 2; }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 48px;
+            position: relative;
+            z-index: 2;
+        }
 
         .hero-tag {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--rose-deep);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-            font-weight: 600;
-            line-height: 1.1;
+            color: var(--red);
             margin-bottom: 24px;
-            color: var(--plum);
         }
 
-        .hero h1 em {
-            font-style: italic;
-            color: var(--rose-deep);
+        .hero-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(5rem, 12vw, 10rem);
+            letter-spacing: 6px;
+            line-height: 0.85;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .hero-brand .red { color: var(--red); }
+
+        .hero-sub {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            letter-spacing: 4px;
+            color: var(--mid-gray);
+            margin-bottom: 32px;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.8;
-            color: var(--text-light);
-            max-width: 480px;
-            margin-bottom: 36px;
+            color: rgba(255,255,255,0.6);
+            max-width: 440px;
+            margin-bottom: 40px;
         }
 
-        .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
         .btn {
             padding: 16px 36px;
-            border-radius: 50px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s;
             cursor: pointer;
@@ -175,179 +171,148 @@
             display: inline-block;
         }
 
-        .btn-primary {
-            background: var(--plum);
+        .btn-red {
+            background: var(--red);
             color: var(--white);
-            box-shadow: 0 4px 20px rgba(92, 36, 52, 0.25);
         }
 
-        .btn-primary:hover {
-            background: var(--rose-deep);
+        .btn-red:hover {
+            background: var(--red-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(92, 36, 52, 0.3);
         }
 
-        .btn-outline {
+        .btn-outline-white {
             background: transparent;
-            color: var(--plum);
-            border: 2px solid var(--plum);
-        }
-
-        .btn-outline:hover {
-            background: var(--plum);
             color: var(--white);
-            transform: translateY(-2px);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
-        .hero-visual {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .btn-outline-white:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.05);
         }
 
-        .hero-visual-inner {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 3/4;
-            background: linear-gradient(145deg, var(--rose), var(--plum));
-            border-radius: 200px 200px 40px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hero-image {
             position: relative;
             overflow: hidden;
         }
 
-        .hero-visual-inner::before {
-            content: '';
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-image::after {
+            content: 'SPORTIVE';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.15), transparent 60%);
-        }
-
-        .hero-visual-text {
-            text-align: center;
-            color: var(--white);
-            z-index: 2;
-            padding: 40px;
-        }
-
-        .hero-visual-text .big {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 700;
+            bottom: 24px;
+            left: 24px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            color: var(--red);
+            opacity: 0.7;
             line-height: 1;
-            display: block;
-            margin-bottom: 8px;
+            letter-spacing: 4px;
+            pointer-events: none;
         }
 
-        .hero-visual-text .sub {
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.8;
+        /* ===================== STATS ===================== */
+        .stats {
+            background: var(--red);
+            padding: 48px 32px;
         }
 
-        /* ===================== STATS BAR ===================== */
-        .stats-bar {
-            background: var(--plum);
-            padding: 40px 24px;
-        }
-
-        .stats-bar .container {
+        .stats .container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 32px;
             text-align: center;
         }
 
-        .stat-item .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--rose-light);
-            margin-bottom: 4px;
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--white);
+            letter-spacing: 2px;
         }
 
-        .stat-item .stat-label {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 1px;
+        .stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            line-height: 1.4;
+            margin-top: 4px;
         }
 
         /* ===================== PROBLEM ===================== */
         .problem {
-            padding: 120px 24px;
+            padding: 120px 32px;
             background: var(--white);
         }
 
         .problem .container { text-align: center; }
 
         .section-tag {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--rose-deep);
+            color: var(--red);
             margin-bottom: 16px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 600;
-            line-height: 1.2;
-            color: var(--plum);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 3px;
+            line-height: 1.05;
+            color: var(--black);
             margin-bottom: 20px;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 60px;
-            line-height: 1.7;
+            max-width: 580px;
+            margin: 0 auto 64px;
+            line-height: 1.8;
         }
 
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 2px;
+            background: var(--light-gray);
         }
 
         .problem-card {
-            background: var(--cream);
-            border-radius: 20px;
-            padding: 36px 24px;
+            background: var(--white);
+            padding: 48px 28px;
             text-align: center;
             transition: all 0.4s;
-            border: 2px solid transparent;
         }
 
         .problem-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--rose-light);
-            box-shadow: 0 12px 40px rgba(196, 137, 138, 0.12);
+            background: var(--off-white);
         }
 
         .problem-stat {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--rose-deep);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--red);
+            letter-spacing: 2px;
             margin-bottom: 12px;
         }
 
         .problem-card h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 8px;
-            color: var(--plum);
+            color: var(--black);
         }
 
         .problem-card p {
@@ -356,10 +321,10 @@
             line-height: 1.6;
         }
 
-        /* ===================== WHY IT MATTERS ===================== */
+        /* ===================== WHY ===================== */
         .why {
-            padding: 120px 24px;
-            background: linear-gradient(180deg, var(--cream), var(--blush));
+            padding: 120px 32px;
+            background: var(--off-white);
         }
 
         .why .container { text-align: center; }
@@ -367,236 +332,178 @@
         .why-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 2px;
             max-width: 900px;
             margin: 0 auto;
+            background: var(--light-gray);
         }
 
         .why-card {
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px 32px;
+            padding: 48px 36px;
             text-align: left;
             transition: all 0.4s;
-            border: 1px solid var(--light-gray);
         }
 
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-        }
+        .why-card:hover { background: var(--off-white); }
 
-        .why-card .why-stat {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--rose-deep);
+        .why-stat {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--red);
+            letter-spacing: 1px;
             margin-bottom: 8px;
         }
 
         .why-card h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--plum);
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 10px;
         }
 
         .why-card p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-light);
             line-height: 1.7;
         }
 
         /* ===================== PRODUCT ===================== */
         .product {
-            padding: 120px 24px;
-            background: var(--plum);
+            padding: 120px 32px;
+            background: var(--black);
             color: var(--white);
             position: relative;
-            overflow: hidden;
         }
 
-        .product::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(196, 137, 138, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .product .section-tag { color: var(--rose-light); }
+        .product .container { text-align: center; }
+        .product .section-tag { color: var(--red); }
         .product .section-title { color: var(--white); }
-        .product .section-subtitle { color: rgba(255,255,255,0.65); }
+        .product .section-subtitle { color: rgba(255,255,255,0.5); }
 
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 2px;
+            background: rgba(255,255,255,0.1);
         }
 
         .product-card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 36px 24px;
+            background: var(--black);
+            padding: 48px 24px;
             text-align: center;
             transition: all 0.4s;
-            backdrop-filter: blur(8px);
+            border-top: 3px solid transparent;
         }
 
         .product-card:hover {
-            background: rgba(255,255,255,0.12);
-            transform: translateY(-5px);
-            border-color: var(--rose);
+            background: rgba(255,255,255,0.03);
+            border-top-color: var(--red);
         }
 
         .product-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: rgba(196, 137, 138, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .product-card h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            color: var(--rose-light);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: var(--white);
         }
 
         .product-card p {
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.45);
             line-height: 1.7;
         }
 
         /* ===================== FOUNDER ===================== */
         .founder {
-            padding: 120px 24px;
+            padding: 0;
             background: var(--white);
         }
 
         .founder .container {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .founder-visual {
-            position: relative;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 100%;
+            padding: 0;
         }
 
         .founder-image {
-            width: 100%;
-            aspect-ratio: 4/5;
-            background: linear-gradient(145deg, var(--blush), var(--rose-light));
-            border-radius: 24px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
             position: relative;
+            min-height: 700px;
             overflow: hidden;
         }
 
-        .founder-image::before {
-            content: '';
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-image::after {
+            content: 'SPORTIVE';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.2), transparent 60%);
-        }
-
-        .founder-image-text {
-            padding: 32px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .founder-image-text .initials {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--plum);
-            opacity: 0.3;
-            line-height: 1;
-        }
-
-        .founder-image-text .name-label {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--plum);
-            margin-top: 12px;
-        }
-
-        .founder-cred-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: var(--plum);
+            bottom: 20px;
+            left: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
             color: var(--white);
-            border-radius: 16px;
-            padding: 20px 24px;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(92, 36, 52, 0.3);
+            opacity: 0.6;
+            letter-spacing: 3px;
+            pointer-events: none;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
         }
 
-        .founder-cred-badge .number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--rose-light);
-        }
-
-        .founder-cred-badge .label {
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0.7;
+        .founder-content {
+            padding: 80px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .founder-content .section-tag { text-align: left; }
-        .founder-content .section-title { text-align: left; }
 
-        .founder-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--plum);
-            margin-bottom: 8px;
+        .founder-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: 3px;
+            color: var(--black);
+            margin-bottom: 4px;
         }
 
-        .founder-title {
-            font-size: 0.95rem;
-            color: var(--rose-deep);
+        .founder-role {
+            font-size: 0.85rem;
+            color: var(--red);
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
         }
 
         .founder-bio {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--text-light);
-            margin-bottom: 32px;
+            margin-bottom: 20px;
         }
 
-        .founder-credentials {
+        .founder-creds {
             list-style: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        .founder-credentials li {
-            font-size: 0.85rem;
+        .founder-creds li {
+            font-size: 0.8rem;
             color: var(--text);
             font-weight: 500;
             display: flex;
@@ -605,76 +512,74 @@
             line-height: 1.5;
         }
 
-        .founder-credentials li::before {
+        .founder-creds li::before {
             content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--rose);
+            width: 6px;
+            height: 6px;
+            background: var(--red);
             flex-shrink: 0;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
-        /* ===================== FOR HER ===================== */
-        .for-her {
-            padding: 120px 24px;
-            background: var(--cream);
+        /* ===================== QUOTE ===================== */
+        .quote-section {
+            padding: 100px 32px;
+            background: var(--off-white);
             text-align: center;
         }
 
-        .for-her-quote {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-            font-style: italic;
-            color: var(--plum);
+        .quote-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            letter-spacing: 2px;
+            line-height: 1.2;
+            color: var(--black);
             max-width: 800px;
             margin: 0 auto 20px;
-            line-height: 1.5;
         }
 
-        .for-her-attribution {
-            font-size: 0.85rem;
+        .quote-text .red { color: var(--red); }
+
+        .quote-attr {
+            font-size: 0.75rem;
             color: var(--warm-gray);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        .for-her-values {
+        .pillars {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 2px;
             max-width: 900px;
-            margin: 60px auto 0;
+            margin: 64px auto 0;
+            background: var(--light-gray);
         }
 
-        .fh-value {
-            padding: 32px 24px;
+        .pillar {
+            background: var(--white);
+            padding: 40px 28px;
+            text-align: center;
         }
 
-        .fh-value h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--plum);
+        .pillar h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--black);
             margin-bottom: 8px;
         }
 
-        .fh-value p {
-            font-size: 0.9rem;
+        .pillar p {
+            font-size: 0.85rem;
             color: var(--text-light);
             line-height: 1.7;
         }
 
-        .fh-divider {
-            width: 40px;
-            height: 2px;
-            background: var(--rose);
-            margin: 0 auto 16px;
-        }
-
         /* ===================== CTA ===================== */
         .cta {
-            padding: 120px 24px;
-            background: linear-gradient(160deg, var(--plum) 0%, var(--rose-deep) 100%);
+            padding: 120px 32px;
+            background: var(--black);
             text-align: center;
             color: var(--white);
             position: relative;
@@ -682,155 +587,150 @@
         }
 
         .cta::before {
-            content: '';
+            content: 'SPORTIVE';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(232, 180, 176, 0.1) 0%, transparent 50%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18vw;
+            color: rgba(255,255,255,0.02);
+            letter-spacing: 20px;
+            white-space: nowrap;
             pointer-events: none;
         }
 
-        .cta .section-tag { color: var(--rose-light); }
+        .cta .section-tag { color: var(--red); }
+        .cta .section-title { color: var(--white); }
 
-        .cta h2 {
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
-            color: var(--white);
-            margin-bottom: 16px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta p {
-            font-size: 1.05rem;
-            max-width: 520px;
+        .cta-desc {
+            font-size: 1rem;
+            max-width: 480px;
             margin: 0 auto 40px;
-            line-height: 1.7;
-            opacity: 0.8;
-            position: relative;
-            z-index: 2;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.5);
         }
 
         .cta-form {
             display: flex;
-            gap: 10px;
+            gap: 0;
             max-width: 460px;
             margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
             position: relative;
             z-index: 2;
         }
 
         .cta-form input {
             flex: 1;
-            min-width: 240px;
-            padding: 16px 24px;
-            border-radius: 50px;
-            border: 2px solid rgba(255,255,255,0.25);
-            font-size: 0.95rem;
+            padding: 18px 24px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-right: none;
+            font-size: 0.9rem;
             font-family: 'Inter', sans-serif;
             outline: none;
-            background: rgba(255,255,255,0.08);
+            background: transparent;
             color: var(--white);
             transition: all 0.3s;
         }
 
-        .cta-form input::placeholder { color: rgba(255,255,255,0.4); }
-        .cta-form input:focus { border-color: var(--rose-light); background: rgba(255,255,255,0.12); }
+        .cta-form input::placeholder { color: rgba(255,255,255,0.3); }
+        .cta-form input:focus { border-color: var(--red); }
 
         .cta-form button {
-            padding: 16px 32px;
-            background: var(--white);
-            color: var(--plum);
-            border: none;
-            border-radius: 50px;
+            padding: 18px 32px;
+            background: var(--red);
+            color: var(--white);
+            border: 2px solid var(--red);
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
         .cta-form button:hover {
-            background: var(--rose-light);
-            color: var(--plum);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            background: var(--red-dark);
+            border-color: var(--red-dark);
         }
 
         .cta-note {
-            font-size: 0.75rem;
-            opacity: 0.5;
+            font-size: 0.7rem;
+            opacity: 0.3;
             margin-top: 16px;
-            position: relative;
-            z-index: 2;
+            letter-spacing: 1px;
         }
 
         /* ===================== FOOTER ===================== */
         footer {
             background: var(--black);
-            color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.3);
             text-align: center;
-            padding: 48px 24px;
+            padding: 40px 32px;
         }
 
         footer .footer-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 800;
-            letter-spacing: 6px;
-            text-transform: uppercase;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
             color: var(--white);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         footer .footer-links {
             display: flex;
             justify-content: center;
             gap: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         footer .footer-links a {
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.3);
             text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: color 0.3s;
         }
 
-        footer .footer-links a:hover { color: var(--rose-light); }
+        footer .footer-links a:hover { color: var(--red); }
 
-        footer p { font-size: 0.8rem; }
+        footer p { font-size: 0.75rem; }
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .hero .container { grid-template-columns: 1fr; text-align: center; }
-            .hero-desc { margin: 0 auto 36px; }
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-content { padding: 120px 32px 60px; text-align: center; }
+            .hero-desc { margin: 0 auto 40px; }
             .hero-buttons { justify-content: center; }
-            .hero-visual { display: none; }
+            .hero-image { min-height: 50vh; }
+            .hero-image::after { font-size: 3rem; }
             .problem-grid { grid-template-columns: repeat(2, 1fr); }
             .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .founder .container { grid-template-columns: 1fr; gap: 48px; }
-            .founder-content .section-tag, .founder-content .section-title { text-align: center; }
-            .founder-content { text-align: center; }
-            .founder-credentials { justify-items: center; }
-            .stats-bar .container { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-            .for-her-values { grid-template-columns: 1fr; }
+            .founder .container { grid-template-columns: 1fr; }
+            .founder-image { min-height: 400px; }
+            .founder-content { padding: 48px 32px; }
+            .stats .container { grid-template-columns: repeat(2, 1fr); }
+            .pillars { grid-template-columns: 1fr; }
+            .cta-form { flex-direction: column; }
+            .cta-form input { border-right: 2px solid rgba(255,255,255,0.15); border-bottom: none; }
         }
 
         @media (max-width: 600px) {
             .problem-grid { grid-template-columns: 1fr; }
             .product-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; }
-            .founder-credentials { grid-template-columns: 1fr; }
+            .founder-creds { grid-template-columns: 1fr; }
         }
 
         /* ===================== ANIMATIONS ===================== */
         .reveal {
             opacity: 0;
-            transform: translateY(28px);
+            transform: translateY(24px);
             transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -844,12 +744,12 @@
 
     <!-- NAV -->
     <nav>
-        <a href="#" class="nav-logo">PEAK</a>
+        <a href="#" class="nav-logo">SPORTIVE</a>
         <ul class="nav-links">
             <li><a href="#problem">The Problem</a></li>
             <li><a href="#product">Product</a></li>
             <li><a href="#founder">Founder</a></li>
-            <li><a href="#signup" class="nav-cta">Join the Waitlist</a></li>
+            <li><a href="#signup" class="nav-cta">Waitlist</a></li>
         </ul>
     </nav>
 
@@ -858,47 +758,43 @@
         <div class="container">
             <div class="hero-content reveal">
                 <div class="hero-tag">Women's Performance Supplements</div>
-                <h1>Unlock Your<br><em>Peak</em><br>Performance</h1>
-                <p class="hero-desc">Science-backed supplements designed around women's physiology — not borrowed from men's. Built by one of the world's leading researchers in female performance.</p>
+                <div class="hero-brand">SPORT<span class="red">IVE</span></div>
+                <div class="hero-sub">Powered by Her Physiology</div>
+                <p class="hero-desc">Science-backed supplements designed around women's biology — not borrowed from men's. Built by one of the world's leading researchers in female performance.</p>
                 <div class="hero-buttons">
-                    <a href="#signup" class="btn btn-primary">Join the Waitlist</a>
-                    <a href="#problem" class="btn btn-outline">Why It Matters</a>
+                    <a href="#signup" class="btn btn-red">Join the Waitlist</a>
+                    <a href="#problem" class="btn btn-outline-white">Why It Matters</a>
                 </div>
             </div>
-            <div class="hero-visual reveal">
-                <div class="hero-visual-inner">
-                    <div class="hero-visual-text">
-                        <span class="big">PEAK</span>
-                        <span class="sub">Powered by Her Physiology</span>
-                    </div>
-                </div>
+            <div class="hero-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/652d3daa82e0757415e84887/125ec322-e093-4123-8944-0881f06228cd/ABBIE_Teal_Suit097_RT_compressed.jpg" alt="Dr. Abbie Smith-Ryan">
             </div>
         </div>
     </section>
 
-    <!-- STATS BAR -->
-    <div class="stats-bar">
+    <!-- STATS -->
+    <div class="stats">
         <div class="container">
             <div class="stat-item reveal">
-                <div class="stat-number">$57.4B</div>
-                <div class="stat-label">Women's supplement<br>market (2024)</div>
+                <div class="stat-num">$57.4B</div>
+                <div class="stat-label">Women's Supplement Market</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number">5%</div>
-                <div class="stat-label">Of supplement science<br>is built for women</div>
+                <div class="stat-num">5%</div>
+                <div class="stat-label">Of Science Built for Women</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number">+30%</div>
-                <div class="stat-label">Female participation<br>in strength training</div>
+                <div class="stat-num">+30%</div>
+                <div class="stat-label">Female Strength Training</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-number">85%</div>
-                <div class="stat-label">Of wellness spend<br>influenced by women</div>
+                <div class="stat-num">85%</div>
+                <div class="stat-label">Wellness Spend by Women</div>
             </div>
         </div>
     </div>
 
-    <!-- THE PROBLEM -->
+    <!-- PROBLEM -->
     <section class="problem" id="problem">
         <div class="container">
             <div class="reveal">
@@ -909,13 +805,13 @@
             <div class="problem-grid">
                 <div class="problem-card reveal">
                     <div class="problem-stat">~1%</div>
-                    <h4>Cycle-Specific Research</h4>
+                    <h4>Cycle Research</h4>
                     <p>Of elite female athlete studies precisely examined performance by menstrual cycle phase.</p>
                 </div>
                 <div class="problem-card reveal">
                     <div class="problem-stat">23%</div>
                     <h4>Women in Studies</h4>
-                    <p>In "credible performance supplement" research, women made up less than a quarter of participants.</p>
+                    <p>In credible performance supplement research, women made up less than a quarter of participants.</p>
                 </div>
                 <div class="problem-card reveal">
                     <div class="problem-stat">3 of 4</div>
@@ -966,7 +862,7 @@
 
     <!-- PRODUCT -->
     <section class="product" id="product">
-        <div class="container" style="text-align: center;">
+        <div class="container">
             <div class="reveal">
                 <p class="section-tag">The Product</p>
                 <h2 class="section-title">The Daily Upgrade</h2>
@@ -1000,76 +896,64 @@
     <!-- FOUNDER -->
     <section class="founder" id="founder">
         <div class="container">
-            <div class="founder-visual reveal">
-                <div class="founder-image">
-                    <div class="founder-image-text">
-                        <div class="initials">ASR</div>
-                        <div class="name-label">Dr. Abbie Smith-Ryan, PhD</div>
-                    </div>
-                </div>
-                <div class="founder-cred-badge">
-                    <div class="number">165+</div>
-                    <div class="label">Peer-Reviewed<br>Publications</div>
-                </div>
+            <div class="founder-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/652d3daa82e0757415e84887/3ee7989b-6dc3-4142-ab45-f1f370d21171/Abbie_Smith_Ryan_Cream_Suit_250_RT_compressed.jpg" alt="Dr. Abbie Smith-Ryan">
             </div>
             <div class="founder-content reveal">
                 <p class="section-tag">The Founder</p>
-                <h3>Dr. Abbie Smith-Ryan, PhD</h3>
-                <p class="founder-title">Professor of Exercise Physiology & Nutrition — University of North Carolina at Chapel Hill</p>
-                <p class="founder-bio">Dr. Smith-Ryan is one of the world's foremost researchers in women's health, exercise physiology, and sports nutrition. With over 165 peer-reviewed publications and 22,000+ citations, her work has fundamentally shaped how we understand female performance.</p>
+                <h2 class="founder-name">Dr. Abbie Smith-Ryan</h2>
+                <p class="founder-role">Professor of Exercise Physiology & Nutrition — University of North Carolina at Chapel Hill</p>
+                <p class="founder-bio">One of the world's foremost researchers in women's health, exercise physiology, and sports nutrition. With over 165 peer-reviewed publications and 22,000+ citations, her work has fundamentally shaped how we understand female performance.</p>
                 <p class="founder-bio">She has spent her career proving what the supplement industry has ignored: women's bodies work differently, and they deserve products built on that science — not adapted from men's.</p>
-                <ul class="founder-credentials">
-                    <li>Professor & Associate Chair for Research, UNC Chapel Hill</li>
-                    <li>Co-Director, Applied Physiology Laboratory</li>
+                <ul class="founder-creds">
+                    <li>Professor & Associate Chair, UNC Chapel Hill</li>
+                    <li>Co-Director, Applied Physiology Lab</li>
                     <li>22,000+ research citations</li>
                     <li>Fellow, ACSM & ISSN & NSCA</li>
                     <li>NIH-funded researcher</li>
                     <li>NSCA Nutrition Researcher of the Year</li>
-                    <li>Expert in female metabolism & body composition</li>
+                    <li>Expert in female metabolism</li>
                     <li>Featured on The Peter Attia Drive</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- FOR HER -->
-    <section class="for-her">
+    <!-- QUOTE / VALUES -->
+    <section class="quote-section">
         <div class="container">
             <div class="reveal">
-                <p class="section-tag">For Her</p>
-                <p class="for-her-quote">"She's not pretending to be a man. She's not diluting her power. She's pink and primal. She combines strength as beauty."</p>
-                <p class="for-her-attribution">The Peak Philosophy</p>
+                <p class="section-tag">The Philosophy</p>
+                <p class="quote-text">"She's not pretending to be a man. She's not diluting her power. She's <span class="red">pink and primal.</span> She combines strength as beauty."</p>
+                <p class="quote-attr">The Sportive Manifesto</p>
             </div>
-            <div class="for-her-values">
-                <div class="fh-value reveal">
-                    <div class="fh-divider"></div>
+            <div class="pillars">
+                <div class="pillar reveal">
                     <h4>Trust</h4>
-                    <p>Science-backed and clinically dosed. Every ingredient is studied on women, dosed for women, and designed to deliver visible, measurable results.</p>
+                    <p>Science-backed and clinically dosed. Every ingredient studied on women, dosed for women, designed to deliver.</p>
                 </div>
-                <div class="fh-value reveal">
-                    <div class="fh-divider"></div>
+                <div class="pillar reveal">
                     <h4>Simplicity</h4>
                     <p>One daily mix that replaces the guesswork, the clutter, and the overwhelm. Performance made effortless.</p>
                 </div>
-                <div class="fh-value reveal">
-                    <div class="fh-divider"></div>
+                <div class="pillar reveal">
                     <h4>Results</h4>
-                    <p>Train, look, and feel your best. Designed for women who lift, run, lead, create, and command — at their highest level.</p>
+                    <p>Train, look, and feel your best. For women who lift, run, lead, create, and command — at their highest level.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA / WAITLIST -->
+    <!-- CTA -->
     <section class="cta" id="signup">
         <div class="container">
             <div class="reveal">
                 <p class="section-tag">Early Access</p>
-                <h2>Ready to Reach<br>Your <em>Peak</em>?</h2>
-                <p>Be the first to experience supplements designed for your physiology. Join the waitlist for exclusive early access and founding member pricing.</p>
+                <h2 class="section-title">Ready to Get<br>Sportive?</h2>
+                <p class="cta-desc">Be the first to experience supplements designed for your physiology. Join the waitlist for exclusive early access and founding member pricing.</p>
                 <form class="cta-form" id="waitlist-form">
                     <input type="email" id="email-input" placeholder="your@email.com" required>
-                    <button type="submit" id="submit-btn">Join the Waitlist</button>
+                    <button type="submit" id="submit-btn">Join Waitlist</button>
                 </form>
                 <p class="cta-note">No spam. Just science, for her.</p>
             </div>
@@ -1078,19 +962,18 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-logo">PEAK</div>
+        <div class="footer-logo">SPORTIVE</div>
         <div class="footer-links">
             <a href="#">Instagram</a>
             <a href="#">TikTok</a>
             <a href="#">Science</a>
         </div>
-        <p>&copy; 2026 Peak. Women's performance, redefined.</p>
-        <p style="margin-top: 6px; font-size: 0.75rem;">A Root portfolio brand.</p>
+        <p>&copy; 2026 Sportive. Women's performance, redefined.</p>
+        <p style="margin-top: 6px; font-size: 0.7rem;">A Root portfolio brand.</p>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1099,26 +982,24 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Waitlist → Google Sheets
         document.getElementById('waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = this;
             const email = document.getElementById('email-input').value;
             const btn = document.getElementById('submit-btn');
-            btn.textContent = 'Sending...';
+            btn.textContent = 'SENDING...';
             btn.disabled = true;
 
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbzYgye8Ff6lFIJHwZX-Y9qvPmR8mjm2jbGdTevjP3iJyyfYJIxaxTnxUZR1Qao3GzI0/exec';
             fetch(scriptUrl + '?email=' + encodeURIComponent(email), { method: 'GET', mode: 'no-cors' })
                 .then(() => {
-                    form.innerHTML = '<p style="font-family: Playfair Display, serif; font-size: 1.6rem; color: var(--rose-light);">You\'re on the list ✦</p><p style="font-size: 0.9rem; opacity: 0.6; margin-top: 8px;">We\'ll be in touch soon.</p>';
+                    form.innerHTML = '<p style="font-family: Bebas Neue, sans-serif; font-size: 2rem; color: var(--red); letter-spacing: 3px;">YOU\'RE ON THE LIST</p><p style="font-size: 0.85rem; opacity: 0.4; margin-top: 8px;">We\'ll be in touch soon.</p>';
                 })
                 .catch(() => {
-                    form.innerHTML = '<p style="font-family: Playfair Display, serif; font-size: 1.6rem; color: var(--rose-light);">You\'re on the list ✦</p>';
+                    form.innerHTML = '<p style="font-family: Bebas Neue, sans-serif; font-size: 2rem; color: var(--red); letter-spacing: 3px;">YOU\'RE ON THE LIST</p>';
                 });
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
