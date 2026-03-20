@@ -437,60 +437,82 @@
             line-height: 1.7;
         }
 
-        /* ===================== FOUNDER ===================== */
-        .founder {
-            padding: 0;
+        /* ===================== FOUNDERS ===================== */
+        .founders {
+            padding: 120px 32px;
             background: var(--white);
         }
 
-        .founder .container {
+        .founders .container { text-align: center; }
+
+        .founders-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0;
-            max-width: 100%;
-            padding: 0;
+            gap: 2px;
+            background: var(--light-gray);
+            margin-top: 64px;
         }
 
-        .founder-image {
+        .founder-card {
+            background: var(--white);
+            text-align: left;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .founder-photo {
             position: relative;
-            min-height: 700px;
+            height: 480px;
             overflow: hidden;
         }
 
-        .founder-image img {
+        .founder-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
         }
 
-        .founder-image::after {
-            content: 'SPORTIVE';
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--white);
-            opacity: 0.6;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            pointer-events: none;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-        }
-
-        .founder-content {
-            padding: 80px 64px;
+        .founder-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, var(--off-white), var(--light-gray));
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
         }
 
-        .founder-content .section-tag { text-align: left; }
+        .founder-photo-placeholder .initials {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--red);
+            opacity: 0.15;
+        }
+
+        .founder-photo::after {
+            content: 'SPORTIVE';
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--white);
+            opacity: 0.5;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            pointer-events: none;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+        }
+
+        .founder-info {
+            padding: 36px 32px;
+        }
 
         .founder-name {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: 1px;
             color: var(--black);
@@ -499,30 +521,30 @@
         }
 
         .founder-role {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--red);
             font-weight: 600;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
             letter-spacing: 0.5px;
         }
 
         .founder-bio {
-            font-size: 1rem;
+            font-size: 0.9rem;
             line-height: 1.8;
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .founder-creds {
             list-style: none;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
+            grid-template-columns: 1fr;
+            gap: 6px;
+            margin-top: 12px;
         }
 
         .founder-creds li {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text);
             font-weight: 500;
             display: flex;
@@ -533,11 +555,11 @@
 
         .founder-creds li::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             background: var(--red);
             flex-shrink: 0;
-            margin-top: 6px;
+            margin-top: 5px;
         }
 
         /* ===================== QUOTE ===================== */
@@ -736,7 +758,7 @@
             .hero-image::after { font-size: 3rem; }
             .problem-grid { grid-template-columns: repeat(2, 1fr); }
             .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .founder .container { grid-template-columns: 1fr; }
+            .founders-grid { grid-template-columns: 1fr; }
             .founder-image { min-height: 400px; }
             .founder-content { padding: 48px 32px; }
             .stats .container { grid-template-columns: repeat(2, 1fr); }
@@ -918,28 +940,57 @@
         </div>
     </section>
 
-    <!-- FOUNDER -->
-    <section class="founder" id="founder">
+    <!-- FOUNDERS -->
+    <section class="founders" id="founder">
         <div class="container">
-            <div class="founder-image">
-                <img src="https://images.squarespace-cdn.com/content/v1/652d3daa82e0757415e84887/3ee7989b-6dc3-4142-ab45-f1f370d21171/Abbie_Smith_Ryan_Cream_Suit_250_RT_compressed.jpg" alt="Dr. Abbie Smith-Ryan">
+            <div class="reveal">
+                <p class="section-tag">The Founders</p>
+                <h2 class="section-title">Built by People<br>Who Know</h2>
+                <p class="section-subtitle">World-class science meets world-class scale. A researcher who redefined female performance and an operator who scaled one of the fastest-growing brands in history.</p>
             </div>
-            <div class="founder-content reveal">
-                <p class="section-tag">The Founder</p>
-                <h2 class="founder-name">Dr. Abbie Smith-Ryan</h2>
-                <p class="founder-role">Professor of Exercise Physiology & Nutrition — University of North Carolina at Chapel Hill</p>
-                <p class="founder-bio">One of the world's foremost researchers in women's health, exercise physiology, and sports nutrition. With over 165 peer-reviewed publications and 22,000+ citations, her work has fundamentally shaped how we understand female performance.</p>
-                <p class="founder-bio">She has spent her career proving what the supplement industry has ignored: women's bodies work differently, and they deserve products built on that science — not adapted from men's.</p>
-                <ul class="founder-creds">
-                    <li>Professor & Associate Chair, UNC Chapel Hill</li>
-                    <li>Co-Director, Applied Physiology Lab</li>
-                    <li>22,000+ research citations</li>
-                    <li>Fellow, ACSM & ISSN & NSCA</li>
-                    <li>NIH-funded researcher</li>
-                    <li>NSCA Nutrition Researcher of the Year</li>
-                    <li>Expert in female metabolism</li>
-                    <li>Featured on The Peter Attia Drive</li>
-                </ul>
+            <div class="founders-grid">
+                <!-- DR. ABBIE SMITH-RYAN -->
+                <div class="founder-card reveal">
+                    <div class="founder-photo">
+                        <img src="https://images.squarespace-cdn.com/content/v1/652d3daa82e0757415e84887/3ee7989b-6dc3-4142-ab45-f1f370d21171/Abbie_Smith_Ryan_Cream_Suit_250_RT_compressed.jpg" alt="Dr. Abbie Smith-Ryan">
+                    </div>
+                    <div class="founder-info">
+                        <h3 class="founder-name">Dr. Abbie Smith-Ryan</h3>
+                        <p class="founder-role">Co-Founder &amp; Chief Science Officer</p>
+                        <p class="founder-bio">Professor of Exercise Physiology & Nutrition at UNC Chapel Hill. One of the world's foremost researchers in women's health with 165+ peer-reviewed publications and 22,000+ citations. Her work has fundamentally shaped how we understand female performance.</p>
+                        <ul class="founder-creds">
+                            <li>Professor & Associate Chair, UNC Chapel Hill</li>
+                            <li>Co-Director, Applied Physiology Lab</li>
+                            <li>22,000+ research citations</li>
+                            <li>Fellow, ACSM & ISSN & NSCA</li>
+                            <li>NIH-funded researcher</li>
+                            <li>NSCA Nutrition Researcher of the Year</li>
+                            <li>Featured on The Peter Attia Drive</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- NINA KHOURY -->
+                <div class="founder-card reveal">
+                    <div class="founder-photo">
+                        <div class="founder-photo-placeholder">
+                            <span class="initials">NK</span>
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h3 class="founder-name">Nina Khoury</h3>
+                        <p class="founder-role">Co-Founder &amp; CEO</p>
+                        <p class="founder-bio">Former VP of Strategic Operations at SKIMS, where she helped scale the brand from DTC startup to global multi-channel powerhouse. Previously at Bain & Company, specialising in private equity and consumer across Australia, India, and the US.</p>
+                        <ul class="founder-creds">
+                            <li>Former VP Strategic Operations, SKIMS</li>
+                            <li>Former Consultant, Bain & Company</li>
+                            <li>Scaled SKIMS through hyper-growth</li>
+                            <li>Expert in omnichannel strategy & ops</li>
+                            <li>University of Sydney, First Class Honours</li>
+                            <li>Bain True North Scholar for Women</li>
+                            <li>Speaker at Shoptalk & industry events</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
